@@ -62,12 +62,14 @@ const Navbar = () => {
 }
 
 const ServiceCard = ({ title, description, icon: Icon }: { title: string, description: string, icon: LucideIcon }) => (
-    <div className="bg-neutral-900/50 p-6 rounded-xl border border-white/5 hover:border-blue-500/30 transition-all hover:-translate-y-1 group">
-        <div className="bg-blue-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
-            <Icon className="w-6 h-6 text-blue-500" />
+    <div className="uiverse-card group">
+        <div className="content">
+            <div className="bg-blue-500/10 w-12 h-12 rounded-lg flex items-center justify-center transition-colors group-hover:bg-white/10">
+                <Icon className="w-6 h-6 text-blue-500 group-hover:text-white transition-colors" />
+            </div>
+            <p className="heading font-heading">{title}</p>
+            <p className="para">{description}</p>
         </div>
-        <h3 className="font-heading font-bold text-lg mb-2 text-white">{title}</h3>
-        <p className="text-neutral-400 text-sm leading-relaxed font-light">{description}</p>
     </div>
 )
 

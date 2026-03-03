@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const navLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Why Us', href: '#why-us' },
-    { label: 'Reviews', href: '#testimonials' },
-    { label: 'Areas', href: '#areas' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'About', href: '/#about' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Why Us', href: '/#why-us' },
+    { label: 'Reviews', href: '/#testimonials' },
+    { label: 'Areas', href: '/#areas' },
+    { label: 'Contact', href: '/#contact' },
 ]
 
 export default function Header() {
@@ -17,7 +17,9 @@ export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false)
 
     useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 60)
+        const isHome = window.location.pathname === '/'
+        const onScroll = () => setScrolled(!isHome || window.scrollY > 60)
+        onScroll()
         window.addEventListener('scroll', onScroll, { passive: true })
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
@@ -33,21 +35,25 @@ export default function Header() {
                 <div className="container">
                     <div className="header-inner">
                         {/* Logo */}
-                        <Link href="/" className="logo" aria-label="Aracena Auto Center — Home">
-                            <div className="logo-icon" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z" />
-                                    <circle cx="7.5" cy="14.5" r="1.5" />
-                                    <circle cx="16.5" cy="14.5" r="1.5" />
-                                </svg>
-                            </div>
-                            <div>
-                                <span style={{ color: 'var(--white)' }}>Aracena Auto Center</span>
-                                <a href="https://www.google.com/maps/place/Aracena+Auto+Center/@40.2003907,-74.7360255,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15997b8097a1f:0xb677ac46ce6503ac!8m2!3d40.2003866!4d-74.7334506!16s%2Fg%2F11j_zw9jqk?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="logo-sub" style={{ textDecoration: 'none' }}>
+                        <div className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                            <Link href="/" className="logo-icon" aria-label="Aracena Auto Center — Home">
+                                <div className="logo-icon-inner" style={{ width: '38px', height: '38px', background: 'var(--yellow)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '22px', height: '22px', fill: 'white' }}>
+                                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z" />
+                                        <circle cx="7.5" cy="14.5" r="1.5" />
+                                        <circle cx="16.5" cy="14.5" r="1.5" />
+                                    </svg>
+                                </div>
+                            </Link>
+                            <div className="logo-text" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                                <Link href="/" style={{ color: 'var(--white)', fontWeight: 900, fontSize: '1.25rem', fontFamily: 'Barlow, sans-serif', textDecoration: 'none', lineHeight: '1.1' }}>
+                                    Aracena Auto Center
+                                </Link>
+                                <a href="https://www.google.com/maps/place/Aracena+Auto+Center/@40.2003907,-74.7360255,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15997b8097a1f:0xb677ac46ce6503ac!8m2!3d40.2003866!4d-74.7334506!16s%2Fg%2F11j_zw9jqk?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="logo-sub" style={{ textDecoration: 'none', fontSize: '0.7rem', color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}>
                                     Trenton, NJ · Since 2016
                                 </a>
                             </div>
-                        </Link>
+                        </div>
 
                         {/* Desktop Nav */}
                         <nav className="nav" aria-label="Main navigation">
@@ -64,18 +70,17 @@ export default function Header() {
                                 </svg>
                                 (609) 341-8565
                             </a>
-                            <a href="#contact" className="btn-23" id="header-cta-btn">
-                                <span className="text">Free Estimate</span>
-                                <span aria-hidden="true" className="marquee">Free Estimate</span>
+                            <a href="/#contact" className="btn" id="header-cta-btn">
+                                <span>Free Estimate</span>
                             </a>
                         </div>
 
                         {/* Hamburger */}
                         <button
                             className="hamburger"
-                            aria-label="Open mobile menu"
+                            aria-label={menuOpen ? "Close mobile menu" : "Open mobile menu"}
                             aria-expanded={menuOpen}
-                            onClick={() => setMenuOpen(true)}
+                            onClick={() => setMenuOpen(!menuOpen)}
                         >
                             <span /><span /><span />
                         </button>
@@ -100,7 +105,7 @@ export default function Header() {
                     <a href="tel:+16093418565" className="btn btn-primary" style={{ marginTop: '1rem', width: '100%' }} onClick={() => setMenuOpen(false)}>
                         📞 Call (609) 341-8565
                     </a>
-                    <a href="#contact" className="btn btn-outline" style={{ marginTop: '1rem', width: '100%' }} onClick={() => setMenuOpen(false)}>
+                    <a href="/#contact" className="btn btn-outline" style={{ marginTop: '1rem', width: '100%' }} onClick={() => setMenuOpen(false)}>
                         Get Free Estimate
                     </a>
                 </nav>

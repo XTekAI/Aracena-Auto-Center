@@ -113,8 +113,8 @@ export default function WhyChooseUs() {
                             ))}
                         </ul>
                         <div className="why-cta-btns">
-                            <a href="#contact" className="btn btn-primary" id="why-estimate-btn">Get a Free Estimate</a>
-                            <a href="tel:+16093418565" className="btn btn-outline" id="why-call-btn">📞 Call Now</a>
+                            <a href="#contact" className="btn" id="why-estimate-btn"><span>Get a Free Estimate</span></a>
+                            <a href="tel:+16093418565" className="btn" id="why-call-btn"><span>📞 Call Now</span></a>
                         </div>
                         {/* Trust Badges */}
                         <div style={{ marginTop: '1.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>

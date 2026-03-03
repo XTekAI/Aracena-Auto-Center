@@ -77,9 +77,9 @@ export default function HowItWorks() {
                         Schedule your professional auto repair in Trenton, NJ today. Experience the quality and honesty of Aracena Auto Center.
                     </p>
                     <div style={{ display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <a href="#contact" className="btn btn-primary" id="how-estimate-btn">Get Your Free Estimate</a>
-                        <a href="tel:+16093418565" className="btn btn-outline" id="how-call-btn">
-                            Call (609) 341-8565
+                        <a href="#contact" className="btn" id="how-estimate-btn"><span>Get Your Free Estimate</span></a>
+                        <a href="tel:+16093418565" className="btn" id="how-call-btn">
+                            <span>Call (609) 341-8565</span>
                         </a>
                     </div>
                 </div>

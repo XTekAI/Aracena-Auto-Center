@@ -81,8 +81,8 @@ export default function About() {
                             ))}
                         </ul>
 
-                        <a href="#contact" className="btn btn-primary" id="about-cta-btn">
-                            Schedule a Repair
+                        <a href="#contact" className="btn" id="about-cta-btn">
+                            <span>Schedule a Repair</span>
                         </a>
                     </div>
                 </div>

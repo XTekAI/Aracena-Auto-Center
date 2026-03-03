@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 const services = [
     {
@@ -65,6 +66,22 @@ const services = [
         imgAlt: 'Vehicle exhaust system and muffler repair service at Aracena Auto Center in Trenton NJ',
         slug: '/services/exhaust-repair-trenton-nj',
     },
+    {
+        id: 'glass',
+        title: 'Auto Glass & Windshield',
+        desc: "Windshield replacement, chip repair, and power window motor service for all vehicle makes and models.",
+        img: '/images/service-glass.jpg',
+        imgAlt: 'Auto glass and windshield repair at Aracena Auto Center in Trenton NJ',
+        slug: '/services/auto-glass-trenton-nj',
+    },
+    {
+        id: 'transmission',
+        title: 'Transmission Repair',
+        desc: "Automatic and manual transmission rebuilds, fluid flushes, and gear diagnostic services.",
+        img: '/images/service-transmission.jpg',
+        imgAlt: 'Transmission repair and maintenance at Aracena Auto Center in Trenton NJ',
+        slug: '/services/transmission-repair-trenton-nj',
+    },
 ]
 
 export default function Services() {
@@ -99,10 +116,9 @@ export default function Services() {
                                 <div className="content">
                                     <h3 className="heading font-heading">{s.title}</h3>
                                     <p className="para">{s.desc}</p>
-                                    <a href={s.slug} className="btn-23" aria-label={`Learn more about ${s.title} in Trenton NJ`}>
-                                        <span className="text">LEARN MORE</span>
-                                        <span aria-hidden="true" className="marquee">LEARN MORE</span>
-                                    </a>
+                                    <Link href={s.slug} className="btn" aria-label={`Learn more about ${s.title} in Trenton NJ`}>
+                                        <span>LEARN MORE</span>
+                                    </Link>
                                 </div>
                             </div>
                         </li>

@@ -12,8 +12,6 @@ const services = [
     'Tires & Wheels',
     'Exhaust System',
     'Transmission Services',
-    'Collision Repair',
-    'Custom Painting',
     'Glass Services',
     'Other / Not Sure',
 ]
@@ -130,23 +128,23 @@ export default function Contact() {
                                     <div className="form-grid">
                                         <div className="form-group">
                                             <label className="form-label" htmlFor="name">Full Name *</label>
-                                            <input id="name" name="name" type="text" className="form-input" placeholder="John Smith" required autoComplete="name" />
+                                            <input id="name" name="name" type="text" className="form-input" placeholder="John Smith" required autoComplete="name" suppressHydrationWarning />
                                         </div>
                                         <div className="form-group">
                                             <label className="form-label" htmlFor="phone">Phone Number *</label>
-                                            <input id="phone" name="phone" type="tel" className="form-input" placeholder="(609) 555-0100" required autoComplete="tel" />
+                                            <input id="phone" name="phone" type="tel" className="form-input" placeholder="(609) 555-0100" required autoComplete="tel" suppressHydrationWarning />
                                         </div>
                                         <div className="form-group">
                                             <label className="form-label" htmlFor="email">Email Address</label>
-                                            <input id="email" name="email" type="email" className="form-input" placeholder="john@email.com" autoComplete="email" />
+                                            <input id="email" name="email" type="email" className="form-input" placeholder="john@email.com" autoComplete="email" suppressHydrationWarning />
                                         </div>
                                         <div className="form-group">
                                             <label className="form-label" htmlFor="vehicle">Vehicle (Year, Make, Model)</label>
-                                            <input id="vehicle" name="vehicle" type="text" className="form-input" placeholder="2019 Toyota Camry" />
+                                            <input id="vehicle" name="vehicle" type="text" className="form-input" placeholder="2019 Toyota Camry" suppressHydrationWarning />
                                         </div>
                                         <div className="form-group full">
                                             <label className="form-label" htmlFor="service">Service Needed</label>
-                                            <select id="service" name="service" className="form-select">
+                                            <select id="service" name="service" className="form-select" suppressHydrationWarning>
                                                 <option value="">Select a service...</option>
                                                 {services.map((s) => (
                                                     <option key={s} value={s}>{s}</option>
@@ -155,7 +153,7 @@ export default function Contact() {
                                         </div>
                                         <div className="form-group full">
                                             <label className="form-label" htmlFor="message">Describe the Issue (Optional)</label>
-                                            <textarea id="message" name="message" className="form-textarea" placeholder="Tell us what's going on with your vehicle..." />
+                                            <textarea id="message" name="message" className="form-textarea" placeholder="Tell us what's going on with your vehicle..." suppressHydrationWarning />
                                         </div>
                                     </div>
 
@@ -168,14 +166,14 @@ export default function Contact() {
 
                                     <button
                                         type="submit"
-                                        className="btn-23"
+                                        className="btn"
                                         id="form-submit-btn"
                                         style={{ width: '100%', justifyContent: 'center', marginTop: '1.25rem' }}
                                         disabled={loading}
                                         aria-busy={loading}
+                                        suppressHydrationWarning
                                     >
-                                        <span className="text">{loading ? 'Sending...' : 'Send Estimate Request'}</span>
-                                        <span aria-hidden="true" className="marquee">{loading ? 'Sending...' : 'Send Estimate Request'}</span>
+                                        <span>{loading ? 'Sending...' : 'Send Estimate Request'}</span>
                                     </button>
                                 </form>
                             </>

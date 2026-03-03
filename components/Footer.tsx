@@ -9,6 +9,8 @@ const services = [
     { label: 'Steering & Suspension', href: '/services/suspension-repair-trenton-nj' },
     { label: 'Tires & Wheels', href: '/services/tire-installation-trenton-nj' },
     { label: 'Exhaust System', href: '/services/exhaust-repair-trenton-nj' },
+    { label: 'Auto Glass & Windshield', href: '/services/auto-glass-trenton-nj' },
+    { label: 'Transmission Repair', href: '/services/transmission-repair-trenton-nj' },
 ]
 
 const quickLinks = [
@@ -29,31 +31,35 @@ export default function Footer() {
                 <div className="footer-grid">
                     {/* Brand */}
                     <div>
-                        <Link href="/" className="logo" aria-label="Aracena Auto Center — Home">
-                            <div className="logo-icon" aria-hidden="true" style={{ background: 'var(--yellow)' }}>
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="black">
-                                    <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z" />
-                                    <circle cx="7.5" cy="14.5" r="1.5" />
-                                    <circle cx="16.5" cy="14.5" r="1.5" />
-                                </svg>
-                            </div>
-                            <div>
-                                <span style={{ color: 'var(--white)' }}>Aracena Auto Center</span>
-                                <a href="https://www.google.com/maps/place/Aracena+Auto+Center/@40.2003907,-74.7360255,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15997b8097a1f:0xb677ac46ce6503ac!8m2!3d40.2003866!4d-74.7334506!16s%2Fg%2F11j_zw9jqk?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="logo-sub" style={{ textDecoration: 'none' }}>
+                        <div className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                            <Link href="/" className="logo-icon" aria-label="Aracena Auto Center — Home">
+                                <div className="logo-icon-inner" style={{ width: '38px', height: '38px', background: 'var(--yellow)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ width: '22px', height: '22px', fill: 'black' }}>
+                                        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.08 3.11H5.77L6.85 7zM19 17H5v-5h14v5z" />
+                                        <circle cx="7.5" cy="14.5" r="1.5" />
+                                        <circle cx="16.5" cy="14.5" r="1.5" />
+                                    </svg>
+                                </div>
+                            </Link>
+                            <div className="logo-text" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                                <Link href="/" style={{ color: 'var(--white)', fontWeight: 900, fontSize: '1.25rem', fontFamily: 'Barlow, sans-serif', textDecoration: 'none', lineHeight: '1.1' }}>
+                                    Aracena Auto Center
+                                </Link>
+                                <a href="https://www.google.com/maps/place/Aracena+Auto+Center/@40.2003907,-74.7360255,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15997b8097a1f:0xb677ac46ce6503ac!8m2!3d40.2003866!4d-74.7334506!16s%2Fg%2F11j_zw9jqk?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="logo-sub" style={{ textDecoration: 'none', fontSize: '0.7rem', color: 'rgba(255,255,255,0.7)', fontWeight: 500 }}>
                                     Trenton, NJ · Since 2016
                                 </a>
                             </div>
-                        </Link>
+                        </div>
                         <p className="footer-brand-desc">
                             Your trusted, locally-owned auto repair shop in Trenton, NJ. Serving Mercer County with honest diagnostics and quality repairs since 2016. Dealership quality at a local price.
                         </p>
                         <div className="footer-socials" aria-label="Social media links">
                             {/* Facebook */}
-                            <a href="https://facebook.com/aracenaautocenter" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Aracena Auto Center on Facebook">
+                            <a href="https://www.facebook.com/profile.php?id=61583126797476" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Aracena Auto Center on Facebook">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /></svg>
                             </a>
                             {/* Instagram */}
-                            <a href="https://instagram.com/aracenaautocenter" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Aracena Auto Center on Instagram">
+                            <a href="https://www.instagram.com/aracenaautocenter/" target="_blank" rel="noopener noreferrer" className="social-btn" aria-label="Aracena Auto Center on Instagram">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
                             </a>
                             {/* Google */}
@@ -133,13 +139,17 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className="footer-bottom">
-                    <p className="footer-copy">
-                        © {new Date().getFullYear()} <a href="/" style={{ color: 'var(--yellow)' }}>Aracena Auto Center</a>. All rights reserved. Auto repair in Trenton, NJ &amp; Mercer County.
-                    </p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        <p className="footer-copy">
+                            © {new Date().getFullYear()} <a href="/" style={{ color: 'var(--yellow)' }}>Aracena Auto Center</a>. All rights reserved. Auto repair in Trenton, NJ &amp; Mercer County.
+                        </p>
+                        <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)', fontWeight: 500 }}>
+                            This website was made by <a href="https://www.xtekai.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--white)', opacity: 0.8, textDecoration: 'underline' }}>XTek AI</a>
+                        </p>
+                    </div>
                     <nav className="footer-legal" aria-label="Legal links">
-                        <a href="/privacy-policy" className="footer-link">Privacy Policy</a>
-                        <a href="/terms" className="footer-link">Terms of Service</a>
-                        <a href="/sitemap.xml" className="footer-link">Sitemap</a>
+                        <Link href="/legal" className="footer-link">Privacy Policy</Link>
+                        <Link href="/legal" className="footer-link">Terms of Use</Link>
                     </nav>
                 </div>
             </div>

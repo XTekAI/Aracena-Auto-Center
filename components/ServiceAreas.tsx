@@ -104,11 +104,9 @@ export default function ServiceAreas() {
                                 href="https://www.google.com/maps/place/Aracena+Auto+Center/@40.2003907,-74.7360255,17z/data=!3m1!4b1!4m6!3m5!1s0x89c15997b8097a1f:0xb677ac46ce6503ac!8m2!3d40.2003866!4d-74.7334506!16s%2Fg%2F11j_zw9jqk?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn btn-outline"
-                                style={{ padding: '0.6rem 1.25rem', fontSize: '0.85rem' }}
-                                aria-label="Get directions to Aracena Auto Center"
+                                className="btn"
                             >
-                                Get Directions
+                                <span>GET DIRECTIONS</span>
                             </a>
                         </div>
                     </div>

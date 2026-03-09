@@ -17,7 +17,7 @@ export default function About() {
                     {/* Image */}
                     <div className="about-img-wrapper">
                         <Image
-                            src="/images/about-shop.jpg"
+                            src="/images/about-shop.png"
                             alt="Aracena Auto Center mechanics working on a vehicle at our auto repair shop on South Broad Street in Trenton NJ"
                             width={600}
                             height={480}

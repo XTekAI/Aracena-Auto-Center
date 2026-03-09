@@ -13,15 +13,15 @@ export default function LegalPage() {
             <Header />
             <main className="bg-white min-h-screen">
                 {/* Spacer for Fixed Header */}
-                <div className="h-24 sm:h-32 bg-[#0A1628]"></div>
+                <div className="h-[72px] sm:h-32 bg-[#0A1628]"></div>
 
                 {/* Hero section */}
-                <section className="bg-[#0A1628] py-16 sm:py-24 border-b border-yellow-500/10">
+                <section className="bg-[#0A1628] py-10 sm:py-24 border-b border-yellow-500/10">
                     <div className="container px-4 text-center sm:text-left">
-                        <h1 className="text-4xl sm:text-6xl font-black text-white mb-6 uppercase leading-tight">
+                        <h1 className="text-3xl sm:text-6xl font-black text-white mb-4 sm:mb-6 uppercase leading-tight">
                             Legal <span className="text-yellow-400">Information</span>
                         </h1>
-                        <p className="text-xl text-gray-300 border-l-4 border-yellow-500 pl-6 italic max-w-2xl leading-relaxed font-medium">
+                        <p className="text-base sm:text-xl text-gray-300 border-l-4 border-yellow-500 pl-4 sm:pl-6 italic max-w-2xl leading-relaxed font-medium">
                             Aracena Auto Center is committed to transparency and protecting your privacy.
                         </p>
                     </div>
@@ -43,7 +43,7 @@ export default function LegalPage() {
                                         This information is used exclusively to provide you with the services requested, communicate about your vehicle repairs, and improve our customer service.
                                     </p>
                                     <p>
-                                        We values your trust and do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. This does not include trusted third parties who assist us in operating our website or servicing you, so long as those parties agree to keep this information confidential.
+                                        We value your trust and do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. This does not include trusted third parties who assist us in operating our website or servicing you, so long as those parties agree to keep this information confidential.
                                     </p>
                                     <p>
                                         By using our site, you consent to our website privacy policy.

@@ -22,11 +22,35 @@ export default function Contact() {
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        const form = e.currentTarget
         setLoading(true)
-        // Simulate async submission
-        await new Promise((r) => setTimeout(r, 1000))
-        setLoading(false)
-        setSubmitted(true)
+        
+        try {
+            const formData = new FormData(form)
+            const data = Object.fromEntries(formData.entries())
+            
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+
+            if (!response.ok) {
+                const errorData = await response.text();
+                console.error('Wix submission error:', errorData);
+                throw new Error('Failed to submit form')
+            }
+
+            setSubmitted(true)
+            form.reset()
+        } catch (error) {
+            console.error('Error submitting form:', error)
+            alert('There was an error sending your request. Please try again or call us directly.')
+        } finally {
+            setLoading(false)
+        }
     }
 
     return (
@@ -68,7 +92,7 @@ export default function Contact() {
                                 <div>
                                     <div className="contact-detail-label">Email</div>
                                     <div className="contact-detail-value">
-                                        <a href="mailto:info@aracenaautocenter.com" style={{ color: 'inherit' }}>info@aracenaautocenter.com</a>
+                                        <a href="mailto:aracenaautocenter@gmail.com" style={{ color: 'inherit' }}>aracenaautocenter@gmail.com</a>
                                     </div>
                                     <div className="contact-detail-extra">We reply within 24 hours</div>
                                 </div>
@@ -113,11 +137,18 @@ export default function Contact() {
                             <div className="form-success show" role="status" aria-live="polite">
                                 <div className="form-success-icon">✅</div>
                                 <h3 className="form-success-title">Thank You!</h3>
-                                <p className="form-success-text">
+                                <p className="form-success-text" style={{ marginBottom: '1.5rem' }}>
                                     We received your estimate request. A member of our team will contact you within 24 hours.
                                     For urgent repairs, please call us directly at{' '}
                                     <a href="tel:+16093418565" style={{ color: 'var(--yellow)', fontWeight: 700 }}>(609) 341-8565</a>.
                                 </p>
+                                <button 
+                                    onClick={() => setSubmitted(false)}
+                                    className="btn btn-outline"
+                                    style={{ width: '100%', justifyContent: 'center' }}
+                                >
+                                    Send Another Request
+                                </button>
                             </div>
                         ) : (
                             <>

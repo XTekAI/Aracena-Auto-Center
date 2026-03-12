@@ -118,7 +118,7 @@ export default function Footer() {
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" strokeWidth="2" aria-hidden="true">
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><path d="M22 6l-10 7L2 6" strokeLinecap="round" />
                                 </svg>
-                                <a href="mailto:info@aracenaautocenter.com" className="footer-link">info@aracenaautocenter.com</a>
+                                <a href="mailto:aracenaautocenter@gmail.com" className="footer-link">aracenaautocenter@gmail.com</a>
                             </li>
                             <li className="footer-contact-item">
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" strokeWidth="2" aria-hidden="true">

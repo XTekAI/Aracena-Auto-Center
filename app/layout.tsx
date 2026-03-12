@@ -55,7 +55,7 @@ const jsonLd = {
                 'Expert auto repair shop in Trenton, NJ serving Mercer County since 2016. We provide honest diagnostics, brake repair, oil changes, engine diagnostics, AC repair, transmission service, tire installation, and vehicle inspections at affordable prices.',
             url: 'https://aracenaautocenter.com',
             telephone: '(609) 341-8565',
-            email: 'info@aracenaautocenter.com',
+            email: 'aracenaautocenter@gmail.com',
             foundingDate: '2016',
             priceRange: '$$',
             currenciesAccepted: 'USD',
